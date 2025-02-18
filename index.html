@@ -1,138 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Devansh Sheth - Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devansh Sheth - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+        }
+        
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)),
+                        url('https://source.unsplash.com/random/1920x1080/?cloud,security') center/cover;
+            color: white;
+            padding: 120px 0;
+        }
+        
+        .skill-badge {
+            background: var(--secondary-color);
+            color: white;
+            margin: 5px;
+        }
+        
+        .project-card {
+            transition: transform 0.3s;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .timeline-item {
+            border-left: 2px solid var(--secondary-color);
+            padding-left: 30px;
+            margin-left: 15px;
+        }
+    </style>
 </head>
 <body>
-  <!-- Header Section -->
-  <header>
-    <div class="container">
-        <!-- Particle Background -->
-      <div id="particles-js"></div>
-      <img src="C:\Users\91635\OneDrive\Desktop\Portfolio\images\WhatsApp Image 2025-02-08 at 4.05.22 PM (3).jpeg" alt="Devansh Sheth" class="profile-pic">
-      <h1>Devansh Sheth</h1>
-      <p>Cloud Security Specialist | Software Developer | AI Enthusiast</p>
-      <a href="#projects" class="btn">View My Work</a>
-      <a href="C:\Users\91635\Downloads\Devansh_Resume 13.pdf" download class="btn">Download Resume</a>
-    </div>
-  </header>
-  <p id="typewriter"></p>
-  <!-- Scroll Progress Bar -->
-  <div id="scroll-progress"></div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Devansh Sheth</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  <!-- Dark Mode Toggle -->
-<button id="dark-mode-toggle" class="btn">🌙</button>
+    <!-- Hero Section -->
+    <section class="hero text-center">
+        <div class="container">
+            <h1 class="display-4 mb-3">Devansh Sheth</h1>
+            <p class="lead">Cloud Security Specialist & Full-Stack Developer</p>
+            <div class="mt-4">
+                <a href="https://linkedin.com/in/devansh-sheth0911" target="_blank" class="btn btn-light btn-lg mx-2">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="mailto:devansh0911sheth1902@gmail.com" class="btn btn-outline-light btn-lg mx-2">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+            </div>
+        </div>
+    </section>
 
-  <!-- About Me Section -->
-  <section id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>
-        I am a Computer Science graduate student at California State University, Long Beach, with a strong background in cloud security, software development, and artificial intelligence. I am passionate about solving complex problems and improving security in cloud environments.
-      </p>
-      <h3>Education</h3>
-      <ul>
-        <li><strong>MS in Computer Science</strong> | California State University, Long Beach (Expected May 2025)</li>
-        <li><strong>BE in Computer Science & Engineering</strong> | Babaria Institute of Technology, Vadodara</li>
-      </ul>
-      <h3>Technical Skills</h3>
-      <ul>
-        <li><strong>Cloud Platforms:</strong> AWS, Azure, Google Cloud Platform (GCP)</li>
-        <li><strong>Programming Languages:</strong> Python, Java, C++, JavaScript</li>
-        <li><strong>DevSecOps Tools:</strong> Docker, Kubernetes, Jenkins</li>
-      </ul>
-    </div>
-  </section>
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">About Me</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Education</h3>
+                    <div class="mb-4">
+                        <h4>MS in Computer Science</h4>
+                        <p>California State University, Long Beach<br>
+                        Expected Graduation: 2025<br>
+                        Relevant Coursework: Cloud Computing, Advanced AI, Information Security, Distributed Systems</p>
+                    </div>
+                    <div class="mb-4">
+                        <h4>BE in Computer Science</h4>
+                        <p>Babaria Institute of Technology<br>
+                        Coursework: Data Structures, Cryptography, Cyber Security, Parallel Computing</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <h3>Technical Skills</h3>
+                    <div class="mb-3">
+                        <span class="badge skill-badge">AWS/Azure/GCP</span>
+                        <span class="badge skill-badge">Python/Java/C++</span>
+                        <span class="badge skill-badge">Docker/Kubernetes</span>
+                        <span class="badge skill-badge">React/Node.js</span>
+                        <span class="badge skill-badge">MySQL/MongoDB</span>
+                        <span class="badge skill-badge">Jenkins/Terraform</span>
+                        <span class="badge skill-badge">Flutter/Dart</span>
+                        <span class="badge skill-badge">Splunk/Wireshark</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Work Experience Section -->
-  <section id="experience">
-    <div class="container">
-      <h2>Work Experience</h2>
-      <div class="job">
-        <h3>Research Assistant | California State University, Long Beach</h3>
-        <p><em>October 2023-January-2024</em></p>
-        <ul>
-          <li>Researched and implemented machine learning models to detect anomalous behavior in cloud environments.</li>
-          <li>Developed a secure multi-cloud architecture framework to enhance data privacy and compliance.</li>
-        </ul>
-      </div>
-      <div class="job">
-        <h3>Cloud Security Intern | Smart Node, India</h3>
-        <p><em>January 2023-June 2023</em></p>
-        <ul>
-          <li>Conducted vulnerability assessments and penetration testing on cloud infrastructure.</li>
-          <li>Automated security monitoring using AWS CloudTrail and Azure Monitor.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    <!-- Experience Section -->
+    <section id="experience" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Experience</h2>
+            <div class="timeline-item">
+                <h4>Research Assistant</h4>
+                <p>California State University, Long Beach</p>
+                <ul>
+                    <li>Improved cloud threat detection accuracy by 20% using ML models</li>
+                    <li>Developed JavaScript apps enhancing patient recovery by 25%</li>
+                    <li>Published cloud security best practices in academic journals</li>
+                </ul>
+            </div>
+            
+            <div class="timeline-item mt-4">
+                <h4>Cloud Security Intern</h4>
+                <p>Smart Node, India</p>
+                <ul>
+                    <li>Reduced cloud infrastructure threats by 30% via penetration testing</li>
+                    <li>Automated security monitoring with AWS CloudTrail/Azure Monitor</li>
+                    <li>Integrated security into CI/CD pipelines using Jenkins/Terraform</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="project">
-        <h3>Cloud Security Framework for Healthcare Data</h3>
-        <p>Designed a secure cloud architecture for storing and processing sensitive healthcare data, ensuring compliance with HIPAA and GDPR.</p>
-        <p><strong>Technologies:</strong> AWS KMS, Azure Key Vault, Encryption Protocols</p>
-      </div>
-      <div class="project">
-        <h3>Multi-Cloud Threat Detection</h3>
-        <p>Developed a machine learning-based threat detection system for multi-cloud environments (AWS, Azure, GCP).</p>
-        <p><strong>Technologies:</strong> Splunk, AWS Security Hub, Machine Learning</p>
-      </div>
-    </div>
-  </section>
+    <!-- Projects Section -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Featured Projects</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Healthcare Cloud Security</h5>
+                            <p class="card-text">HIPAA-compliant framework reducing breach risk by 40% using AWS KMS and Azure Key Vault.</p>
+                            <div class="badge bg-primary">AWS</div>
+                            <div class="badge bg-primary">Azure</div>
+                        </div>
+                    </div>
+                </div>
 
-  <!-- Blog Section -->
-  <section id="blog">
-    <div class="container">
-      <h2>Blog</h2>
-      <div class="blog-post">
-        <h3>Best Practices for Cloud Security in Multi-Cloud Environments</h3>
-        <p><em>Published: October 2023</em></p>
-        <p>In this article, I discuss the challenges of securing multi-cloud environments and share best practices for ensuring data privacy and compliance.</p>
-        <a href="#" class="btn">Read More</a>
-      </div>
-      <div class="blog-post">
-        <h3>Integrating Security into DevOps: A Practical Guide</h3>
-        <p><em>Published: September 2023</em></p>
-        <p>This guide provides step-by-step instructions on how to integrate security into your DevOps pipeline using tools like Jenkins, Docker, and Kubernetes.</p>
-        <a href="#" class="btn">Read More</a>
-      </div>
-    </div>
-  </section>
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Multi-Cloud Threat Detection</h5>
+                            <p class="card-text">ML-based system improving APT detection by 25% using Splunk integration.</p>
+                            <div class="badge bg-primary">Python</div>
+                            <div class="badge bg-primary">Splunk</div>
+                        </div>
+                    </div>
+                </div>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="container">
-      <h2>Contact Me</h2>
-      <p>Feel free to reach out to me for collaborations or opportunities!</p>
-      <ul>
-        <li><strong>Email:</strong> devansh0911sheth1902@gmail.com</li>
-        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/devansh-sheth0911/">LinkedIn Profile</a></li>
-        <li><strong>Phone:</strong> (562) 391-5168</li>
-      </ul>
-    </div>
-  </section>
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Secure DevOps Pipeline</h5>
+                            <p class="card-text">Automated security testing reducing deployment time by 20% with Jenkins/Docker.</p>
+                            <div class="badge bg-primary">DevOps</div>
+                            <div class="badge bg-primary">Kubernetes</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2023 Devansh Sheth. All rights reserved.</p>
-    </div>
-  </footer>
+    <!-- Contact Section -->
+    <section id="contact" class="bg-dark text-light py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">Get In Touch</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <p><i class="fas fa-phone me-2"></i>(562) 391-5168</p>
+                    <p><i class="fas fa-envelope me-2"></i>devansh0911sheth1902@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>Long Beach, CA</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Back to Top Button -->
-  <button id="back-to-top" class="btn">↑</button>
-
-  <!-- JavaScript -->
-  <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
